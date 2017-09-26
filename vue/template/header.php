@@ -38,16 +38,10 @@
           <div class="collapse navbar-collapse " id="navbarText">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="connexion.php?connexion=connexion">Connexion</a>
+                <a class="nav-link" href="index.php">Connexion</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="connexion.php?connexion=creer">Créer un compte</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="post/deconnexion.php">Deconnexion</a>
-              </li>
-              <li>
-                <strong class="nav-link text-white">Bonjour</strong>
+                <a class="nav-link" href="creation_compte.php">Créer un compte</a>
               </li>
             </ul>
           </div>
