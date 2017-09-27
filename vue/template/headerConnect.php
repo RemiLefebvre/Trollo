@@ -27,8 +27,8 @@
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     </head>
     <body>
-      <header class="">
-        <nav id="navheader" class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <header id="headerConnect">
+        <nav id="navheader" class="fixed-top navbar navbar-toggleable-md navbar-light">
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

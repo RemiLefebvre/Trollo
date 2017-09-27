@@ -77,3 +77,47 @@ body{
     -webkit-transition: all 0.218s;
     transition: all 0.218s;
 }
+
+
+/*PROJETS PAGE*/
+#headerConnect #navheader{
+  background-color: rgba(255, 255, 255, 0.9);
+  color: white;
+}
+#mainProjets{
+  margin-top: 80px;
+}
+#mainProjets article .option .btn{
+  width: 100%;
+  position: relative;
+}
+#mainProjets article .option .btn:first-child::after{
+  content: "Voir les details";
+}
+#mainProjets article .option .btn:nth-child(2)::after{
+  content: "Editer le projet";
+}
+#mainProjets article .option .btn:last-child::after{
+  content: "Supprimer le projet";
+  color: red;
+}
+#mainProjets article .option .btn::after{
+  color: #505dd8;
+  font-size: 22px;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  left:0;
+  top: 0;
+  padding-top: 15px;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+#mainProjets article .option .btn:hover::after{
+  width: auto;
+
+  left: 100%;
+  opacity: 1;
+
+}
