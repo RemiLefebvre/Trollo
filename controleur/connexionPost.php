@@ -21,6 +21,7 @@ else {
 $connexionDone=connexion($user,$mdp);
 if ($connexionDone==true) {
   connect($user);
+  header("Location:list_projets.php");
 }
 else {
   header("Location:index.php");

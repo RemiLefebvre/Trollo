@@ -20,4 +20,5 @@ else {
 $mdp = password_hash($mdp,PASSWORD_BCRYPT);
 insert_new_compte($user,$mdp);
 connect($user);
+header("Location:list_projets.php");
  ?>

@@ -1,6 +1,8 @@
 <?php
 require_once('dbconnect/dbconnect.php');
 
+
+// CREATION COMPTE
 function insert_new_compte($user,$mdp){
   global $bdd;
 
@@ -10,8 +12,6 @@ function insert_new_compte($user,$mdp){
     'mdp'=> $mdp
   ));
 }
-
-
 
 // CONNEXION
 function connexion($user,$mdp){
@@ -35,6 +35,30 @@ function connexion($user,$mdp){
       return false;
     }
   }
+}
+
+
+
+
+// GET PROJETS
+function get_projets(){
+  global $bdd;
+  $projets=$bdd->query('SELECT *
+    FROM projets');
+  return $projets;
+}
+
+// GET ONCE PROJETS
+function get_projet(){
+  global $bdd;
+  global $enfant_select;
+  $enfant=$bdd->query('SELECT *
+    FROM Listing_Img_Enfant img
+    INNER JOIN Listing_Enfants enfant
+    ON enfant.id_enfant = img.id_img
+    WHERE id_enfant = ' . $enfant_select . '');
+
+  return $enfant;
 }
 
  ?>
