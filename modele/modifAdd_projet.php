@@ -1,6 +1,8 @@
 <?php
 require_once('dbconnect/dbconnect.php');
 
+
+// MODIF PROJET
 function modif_proj($name,$description,$deadtime,$id){
 
   global $bdd;
@@ -16,6 +18,20 @@ function modif_proj($name,$description,$deadtime,$id){
     $description,
     $id
   ));
+}
+
+// ADD PROJET
+function add_proj($name,$description,$deadtime,$user){
+  global $bdd;
+
+  $req=$bdd->prepare('INSERT INTO projets(name, user, deadtime, description) VALUES(:name, :user, :deadtime, :description)');
+  $req->execute(array(
+    'name'=> $name,
+    'user'=> $user,
+    'deadtime'=> $deadtime,
+    'description'=> $description
+  ));
 
 }
+
  ?>

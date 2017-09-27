@@ -41,7 +41,7 @@ function connexion($user,$mdp){
 function get_projets(){
   global $bdd;
   $projets=$bdd->query('SELECT *
-    FROM projets');
+    FROM projets ORDER BY deadtime');
   return $projets;
 }
 

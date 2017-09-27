@@ -40,9 +40,7 @@
               <li class="nav-item">
                 <strong class="nav-link">Bonjour <?php echo $_SESSION['user'] ?></strong>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Ajouter un projet</a>
-              </li>
+                <span class="nav-link btn" data-toggle="modal" data-target="#addProjet">Ajouter un projet</span>
               <li class="nav-item">
                 <a class="nav-link" href="deconnexion.php">Se deconnecter</a>
               </li>
@@ -64,4 +62,32 @@
             </ul>
           </div>
         </nav>
+
+
+        <!-- The modal -->
+        <div class="modal fade" id="addProjet" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="modalLabel">Ajouter un projet</h4>
+              </div>
+              <div class="modal-body">
+                  <form class="" action="add_projetPost.php" method="post">
+                    <input type="hidden" name="user" value="<?php echo $_SESSION['user']?>">
+                    <input class="form-control" type="text" name="name" placeholder="Nom du projet">
+                    <textarea class="form-control" name="description" rows="8" placeholder="Description du projet"></textarea>
+                    <input class="form-control" type="text" name="deadtime" placeholder="Date butoire Ex:2017-02-25">
+                    <br>
+                    <hr>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <input class="btn btn-success" type="submit" name="" value="Ajouter">
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </header>
