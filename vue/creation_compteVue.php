@@ -3,7 +3,7 @@
 
 <div id="mainConnexion" class="">
   <div  class="container card mt-5">
-    <form class="form-horizontal mb-5" role="form" method="POST" action="creer_compte.php">
+    <form class="form-horizontal mb-5" role="form" method="POST" action="creation_comptePost.php">
       <div class="row">
         <div class="col-md-12">
           <h2>Créer un compte</h2>
@@ -14,7 +14,7 @@
         <div class="col-md-12">
           <div class="form-group ">
             <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-              <input type="text" name="compte" class="form-control"
+              <input type="text" name="user" class="form-control"
               placeholder="Utilisateur" required autofocus>
             </div>
           </div>
