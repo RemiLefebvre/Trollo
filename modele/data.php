@@ -37,9 +37,6 @@ function connexion($user,$mdp){
   }
 }
 
-
-
-
 // GET PROJETS
 function get_projets(){
   global $bdd;

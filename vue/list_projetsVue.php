@@ -1,6 +1,15 @@
 <?php include_once('template/headerConnect.php');
 ?>
 <main id="mainProjets" class="container mt-5">
+  <h3><strong><?php if(isset($_GET['status'])) {
+    if($_GET['status']=="good"){
+      echo "Modification réussie";
+    }
+    else{
+      echo "erreur de saisie";
+    }
+  }
+  ?></strong></h3>
 
 <?php
 while ($projet = $projets->fetch()) {
@@ -20,7 +29,7 @@ while ($projet = $projets->fetch()) {
         </div>
         <div class="d-flex justify-content-between p-2">
           <span class="pl-2"><strong>Date butoire:</strong><?php echo $projet['deadtime'] ?></span>
-          <span class="pl-2"><strong>Creation:</strong> <?php echo $projet['date'] ?></span>
+          <span class="pl-2"><strong>Creation du projet:</strong> <?php echo $projet['date'] ?></span>
         </div>
       </div>
     </article>
@@ -37,10 +46,11 @@ while ($projet = $projets->fetch()) {
             <h4 class="modal-title" id="modalLabel">Modification</h4>
           </div>
           <div class="modal-body">
-              <form class="" action="index.html" method="post">
-                <input class="form-control" type="text" name="" value="<?php echo $projet['name'] ?>">
-                <textarea class="form-control" name="name" rows="8" placeholder=""> <?php echo $projet['description'] ?></textarea>
-                <input class="form-control" type="text" name="" value="<?php echo $projet['deadtime'] ?>">
+              <form class="" action="modif_projetPost.php" method="post">
+                <input type="hidden" name="ID" value="<?php echo $projet['ID'] ?>">
+                <input class="form-control" type="text" name="name" value="<?php echo $projet['name'] ?>">
+                <textarea class="form-control" name="description" rows="8" placeholder=""> <?php echo $projet['description'] ?></textarea>
+                <input class="form-control" type="text" name="deadtime" value="<?php echo $projet['deadtime'] ?>">
                 <br>
                 <hr>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
