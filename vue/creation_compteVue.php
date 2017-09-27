@@ -33,7 +33,7 @@
       </div>
       <div class="row" style="padding-top: 1rem">
         <div class="col-md-6">
-          <button type="submit" class="btn btn-success"><i class="fa fa-sign-in"></i> Créer</button>
+          <input type="submit" class="btn btn-success"><i class="fa fa-sign-in"></i> Créer</button>
         </div>
       </div>
     </form>

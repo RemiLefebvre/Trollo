@@ -8,9 +8,9 @@ while ($projet = $projets->fetch()) {
 
     <article class="d-flex flex-row card mb-4">
       <div class="d-flex flex-column bg-faded align-items-center justify-content-center">
-        <a href="#"><i class="fa fa-times-circle fa-2x p-1" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-pencil-square-o fa-2x p-1" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-eye fa-2x p-1" aria-hidden="true"></i></a>
+        <button type="button" class="btn" data-toggle="modal" data-target="#flipFlop"><i class="fa fa-pencil-square-o fa-2x p-1" aria-hidden="true"></i></button>
+        <a href="#"><i class="fa fa-times-circle fa-2x p-1" aria-hidden="true"></i></a>
       </div>
       <div class="">
         <h2 class="pl-4 pt-3"><?php echo $projet['name'] ?></h2>
@@ -23,6 +23,33 @@ while ($projet = $projets->fetch()) {
         </div>
       </div>
     </article>
+
+
+    <!-- The modal -->
+    <div class="modal fade" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="modalLabel">Modification</h4>
+          </div>
+          <div class="modal-body">
+              <form class="" action="index.html" method="post">
+                <input class="form-control" type="text" name="" value="<?php echo $projet['name'] ?>">
+                <textarea class="form-control" name="name" rows="8" placeholder=" <?php echo $projet['description'] ?>"></textarea>
+                <input class="form-control" type="text" name="" value="<?php echo $projet['deadtime'] ?>">
+                <br>
+                <hr>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <input class="btn btn-success" type="submit" name="" value="Modifier">
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 
     <?php

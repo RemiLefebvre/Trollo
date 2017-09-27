@@ -9,7 +9,7 @@ include_once('template/header.php');
           <form class="mb-3 form-signin" role="form" action="connexionPost.php" method="POST">
             <input type="text" name="user" class="form-control" placeholder="Utilisateur" required autofocus>
             <input type="password" name="mdp" class="form-control" placeholder="Mot de passe" required>
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Connexion</button>
+            <input class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Connexion</button>
           </form><!-- /form -->
           <p>Pas de compte ? <a href="creation_compte.php">Creer un compte</a></p>
         </div><!-- /card-container -->
