@@ -5,7 +5,8 @@ body,html{
 body{
   background-image: url("../img/bg.jpg");
   background-size: cover;
-  background-position: 0 -90px ;
+  background-attachment: fixed;
+  /*background-position: 0 -90px ;*/
 }
 
 /* Connexion @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
