@@ -31,7 +31,24 @@ function add_proj($name,$description,$deadtime,$user){
     'deadtime'=> $deadtime,
     'description'=> $description
   ));
-
 }
 
+
+// SUPR PROJET
+function supr_proj($name){
+  global $bdd;
+
+  $sup=$bdd->prepare('DELETE FROM projets
+  WHERE name = ?');
+  $sup->execute(array(
+    $name
+  ));
+
+
+  $sup_steps=$bdd->prepare('DELETE FROM steps WHERE projet_name = ?');
+  $sup_steps->execute(array(
+    $name
+  ));
+
+}
  ?>

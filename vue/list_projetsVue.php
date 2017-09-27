@@ -1,12 +1,13 @@
 <?php include_once('template/headerConnect.php');
 ?>
 <main id="mainProjets" class="container">
-  <h3><strong><?php if(isset($_GET['status'])) {
+  <h3 class="status"><strong>
+    <?php if(isset($_GET['status'])) {
     if($_GET['status']=="good"){
-      echo "Modification réussie";
+      echo "Modification réussie*";
     }
     else{
-      echo "erreur de saisie";
+      echo "erreur de saisie*";
     }
   }
   ?></strong></h3>
@@ -19,7 +20,7 @@ while ($projet = $projets->fetch()) {
       <div class="d-flex flex-column bg-faded align-items-center justify-content-center option">
         <a href="detail_proj.php" class="btn"><i class="fa fa-eye fa-2x p-1" aria-hidden="true"></i></a>
         <button type="button" class="btn" data-toggle="modal" data-target="#modal<?php echo $projet["ID"]?>"><i class="fa fa-pencil-square-o fa-2x p-1 text-primary" aria-hidden="true"></i></button>
-        <a href="supr_projPost.php" class="btn"><i class="fa fa-times-circle fa-2x p-1" aria-hidden="true"></i></a>
+        <a href="supr_projPost.php?name=<?php echo $projet['name']?>" class="btn"><i class="fa fa-times-circle fa-2x p-1" aria-hidden="true"></i></a>
       </div>
       <div class="w-100">
         <h2 class="pl-4 pt-2 "><?php echo $projet['name'] ?></h2>
