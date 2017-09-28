@@ -18,7 +18,7 @@ while ($projet = $projets->fetch()) {
 
     <article class="d-flex flex-row card mb-4">
       <div class="d-flex flex-column bg-faded align-items-center justify-content-center option">
-        <a href="detail_proj.php?name=<?php echo $projet['name']?>" class="btn"><i class="fa fa-eye fa-2x p-1" aria-hidden="true"></i></a>
+        <a href="detail_proj.php?ID_proj=<?php echo $projet['ID']?>&name=<?php echo $projet['name']?>" class="btn"><i class="fa fa-eye fa-2x p-1" aria-hidden="true"></i></a>
         <button type="button" class="btn" data-toggle="modal" data-target="#modal<?php echo $projet["ID"]?>"><i class="fa fa-pencil-square-o fa-2x p-1 text-primary" aria-hidden="true"></i></button>
         <a href="supr_projPost.php?name=<?php echo $projet['name']?>" class="btn"><i class="fa fa-times-circle fa-2x p-1" aria-hidden="true"></i></a>
       </div>

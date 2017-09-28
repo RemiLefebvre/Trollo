@@ -48,13 +48,14 @@ function get_projets($order,$user){
   return $projets;
 }
 
-// GET ONCE PROJETS
-function get_steps($name){
+
+// GET STEPS
+function get_steps($ID_proj){
   global $bdd;
 
-  $detail_proj=$bdd->prepare('SELECT * FROM steps WHERE projet_name=:name');
+  $detail_proj=$bdd->prepare('SELECT * FROM steps WHERE ID_proj=:ID_proj');
   $detail_proj->execute(array(
-    'name'=>$name
+    'ID_proj'=>$ID_proj
   ));
 
   return $detail_proj;
