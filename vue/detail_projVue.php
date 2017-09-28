@@ -8,13 +8,14 @@
    <div class="row px-5 justify-content-between">
 
      <?php
+     $toDo=['','A faire','En cours','Terminé'];
      for ($i=1; $i <=3 ; $i++) {
       ?>
 
      <!-- todo -->
      <section class="toDo d-flex flex-column col-lg-3 col-md-3 col-12">
        <div class="d-flex align-items-center justify-content-between w-100 p-2">
-         <h2>A faire</h2>
+         <h2><?php echo $toDo[$i] ?></h2>
          <a href="#" data-toggle="modal" data-target="#modal<?php echo $i?>" tabindex="-1"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></a>
        </div>
        <hr class="mt-0">
@@ -62,10 +63,7 @@
      <?php
     }
       ?>
-
-
-
-   </div>
+    </div>
 
 </main>
 
