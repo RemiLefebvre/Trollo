@@ -81,7 +81,7 @@
                     <input type="hidden" name="user" value="<?php echo $_SESSION['user']?>">
                     <input class="form-control" type="text" name="name" placeholder="Nom du projet">
                     <textarea class="form-control" name="description" rows="8" placeholder="Description du projet"></textarea>
-                    <input class="form-control" type="text" name="deadtime" placeholder="Date butoire Ex:2017-02-25">
+                    <input class="form-control" type="text" name="deadtime" placeholder="Date butoire Ex:02-05-2018">
                     <br>
                     <hr>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
