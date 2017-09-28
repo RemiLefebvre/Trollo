@@ -49,16 +49,16 @@ function get_projets($order,$user){
 }
 
 // GET ONCE PROJETS
-function get_projet(){
+function get_steps($name){
   global $bdd;
-  global $enfant_select;
-  $enfant=$bdd->query('SELECT *
-    FROM Listing_Img_Enfant img
-    INNER JOIN Listing_Enfants enfant
-    ON enfant.id_enfant = img.id_img
-    WHERE id_enfant = ' . $enfant_select . '');
 
-  return $enfant;
+  $detail_proj=$bdd->prepare('SELECT * FROM steps WHERE projet_name=:name');
+  $detail_proj->execute(array(
+    'name'=>$name
+  ));
+
+  return $detail_proj;
+
 }
 
  ?>

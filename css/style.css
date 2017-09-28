@@ -130,3 +130,28 @@ body{
   opacity: 1;
 
 }
+
+
+/*STEPS*/
+#mainSteps{
+  margin-top: 90px;
+}
+#mainSteps section{
+  background-color: white;
+  margin-bottom: 30px;
+  padding: 0;
+  /*flex-direction: column;*/
+}
+#mainSteps section i{
+  font-size: 30px;
+}
+#mainSteps section .steps .step{
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  padding: 5px;
+}
+#mainSteps section .steps .step:hover{
+  background-color: #5398C6;
+  color: white;
+}
