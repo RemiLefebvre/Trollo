@@ -38,10 +38,13 @@ function connexion($user,$mdp){
 }
 
 // GET PROJETS
-function get_projets(){
+function get_projets($order,$user){
   global $bdd;
-  $projets=$bdd->query('SELECT *
-    FROM projets ORDER BY deadtime');
+  $projets=$bdd->prepare('SELECT *
+    FROM projets WHERE user=:user ORDER BY ' . $order);
+  $projets->execute(array(
+    'user'=> $user,
+  ));
   return $projets;
 }
 

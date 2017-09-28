@@ -52,9 +52,9 @@
                     Trier par
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Date butoire</a>
-                    <a class="dropdown-item" href="#">Ordre alphabètique</a>
-                    <a class="dropdown-item" href="#">Date de création</a>
+                    <a class="dropdown-item" href="list_projets.php?order=deadtime">Date butoire</a>
+                    <a class="dropdown-item" href="list_projets.php?order=name">Ordre alphabètique</a>
+                    <a class="dropdown-item" href="list_projets.php?order=ID">Date de création</a>
                   </div>
                 </div>
               </li>
