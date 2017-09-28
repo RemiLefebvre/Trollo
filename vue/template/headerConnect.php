@@ -41,7 +41,7 @@
                 <strong class="nav-link text-muted">Bonjour <?php echo $_SESSION['user'] ?></strong>
               </li>
               <li>
-                <span class="nav-link btn" data-toggle="modal" data-target="#addProjet">Ajouter un projet</span>
+                <span class="nav-link" data-toggle="modal" data-target="#addProjet">Ajouter un projet</span>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="deconnexion.php">Se deconnecter</a>

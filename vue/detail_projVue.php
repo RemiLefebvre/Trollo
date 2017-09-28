@@ -1,5 +1,5 @@
 <?php
- include_once('template/headerConnect.php');
+ include_once('template/headerSteps.php');
  ?>
 
  <main id="mainSteps" class=" ">
@@ -42,7 +42,8 @@
            <div class="modal-body">
              <form class="" action="add_stepPost.php" method="post">
                <input type="hidden" name="advancement" value="1">
-               <input type="hidden" name="name" value="<?php echo $_GET['name']?>">
+               <input type="hidden" name="name" value="<?php echo $name_proj?>">
+               <input type="hidden" name="ID_proj" value="<?php echo $ID_proj?>">
                <textarea class="form-control" name="step" rows="8" placeholder=""></textarea>
                <br>
                <hr>
@@ -92,7 +93,8 @@
            <div class="modal-body">
              <form class="" action="add_stepPost.php" method="post">
                <input type="hidden" name="advancement" value="2">
-               <input type="hidden" name="name" value="<?php echo $_GET['name']?>">
+               <input type="hidden" name="name" value="<?php echo $name_proj?>">
+               <input type="hidden" name="ID_proj" value="<?php echo $ID_proj?>">
                <textarea class="form-control" name="step" rows="8" placeholder=""></textarea>
                <br>
                <hr>
@@ -142,7 +144,8 @@
            <div class="modal-body">
              <form class="" action="add_stepPost.php" method="post">
                <input type="hidden" name="advancement" value="3">
-               <input type="hidden" name="name" value="<?php echo $_GET['name']?>">
+               <input type="hidden" name="name" value="<?php echo $name_proj?>">
+               <input type="hidden" name="ID_proj" value="<?php echo $ID_proj?>">
                <textarea class="form-control" name="step" rows="8" placeholder=""></textarea>
                <br>
                <hr>

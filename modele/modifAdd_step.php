@@ -2,15 +2,15 @@
 require_once('dbconnect/dbconnect.php');
 
 
-function add_step($advancement,$projet_name,$step){
+function add_step($advancement,$step,$ID_proj){
 
   global $bdd;
 
-  $req=$bdd->prepare('INSERT INTO steps(projet_name, step, advancement) VALUES(:projet_name, :step, :advancement)');
+  $req=$bdd->prepare('INSERT INTO steps(step, advancement ,ID_proj) VALUES(:step, :advancement ,:ID_proj)');
   $req->execute(array(
-    'projet_name'=> $projet_name,
     'step'=> $step,
-    'advancement'=> $advancement
+    'advancement'=> $advancement,
+    'ID_proj'=> $ID_proj
   ));
 
 }
