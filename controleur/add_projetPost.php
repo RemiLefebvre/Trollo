@@ -1,10 +1,11 @@
 <?php
 
   require_once("../modele/modifAdd_projet.php");
+  require_once("service/verif_date.php");
 
 
   if (isset($_POST['name']) AND isset($_POST['description']) AND isset($_POST['deadtime']) AND isset($_POST['user'])) {
-    if (preg_match('/^([0-9]{2}[-.\s]?){2}[0-9]{2,4}+$/', $_POST['deadtime'])) {
+    if (verif_date($_POST['deadtime'])==true) {
       $name=htmlspecialchars($_POST['name']);
       $description=htmlspecialchars($_POST['description']);
       $deadtime=htmlspecialchars($_POST['deadtime']);
