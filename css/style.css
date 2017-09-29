@@ -134,24 +134,31 @@ body{
 
 /*STEPS*/
 #mainSteps{
-  margin-top: 90px;
+  margin-top: 60px;
+}
+#mainSteps .name_proj{
+  color: white;
+  background-color: rgba(50,50,50,0.5);
+  padding:10px 0 10px 30px;
 }
 #mainSteps section{
-  background-color: white;
+  background-color: rgba(250,250,250,0.9);
   margin-bottom: 30px;
   padding: 0;
-  /*flex-direction: column;*/
+}
+#mainSteps section .toDo{
+  background-color: rgba(250,250,250,0.4);
 }
 #mainSteps section i{
   font-size: 30px;
 }
 #mainSteps section .steps .step{
-  font-weight: bold;
+  background-color: rgba(250,250,250,0.4) ;
+  /*font-weight: bold;*/
   color: black;
   text-decoration: none;
   padding: 5px;
 }
 #mainSteps section .steps .step:hover{
-  background-color: #5398C6;
-  color: white;
+  background-color: rgba(250,250,250,0.9);
 }

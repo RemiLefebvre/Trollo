@@ -3,7 +3,13 @@
  ?>
 
  <main id="mainSteps" class=" ">
-   <h2 class=" card"><?php echo $name_proj?></h2>
+   <h2 class="name_proj card"><?php echo $name_proj?></h2>
+   <div class="card">
+     <!-- <pre>
+     <?php print_r($under_steps);
+ ?>
+    </pre> -->
+   </div>
 
    <div class="row px-5 justify-content-between">
 
@@ -14,23 +20,32 @@
 
      <!-- todo -->
      <section class="toDo d-flex flex-column col-lg-3 col-md-3 col-12">
-       <div class="d-flex align-items-center justify-content-between w-100 p-2">
+       <div class="d-flex align-items-center justify-content-between w-100 p-2 toDo">
          <h2><?php echo $toDo[$i] ?></h2>
          <a href="#" data-toggle="modal" data-target="#modal<?php echo $i?>" tabindex="-1"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></a>
        </div>
        <hr class="mt-0">
        <div class="steps">
          <?php
+        //  print_r($steps);
          foreach ($steps as $step) {
            if ($step['advancement']==$i) {
              ?>
              <a href="#" class="card step">
-               <p class=""><?php echo $step['step'] ?></p>
+               <strong><p class=""><?php echo $step['step'] ?></p></strong>
+               <br>
+               <?php foreach ($under_steps as $under_step) {
+                 if($under_step['ID_step']==$step['ID']){
+                   ?>
+                   <p>-<?php echo $under_step['under_step'] ?></p>
+                   <?php
+                 }
+               } ?>
              </a>
-             <?php
+               <?php
+             }
            }
-         }
-         ?>
+             ?>
        </div>
      </section>
 
@@ -47,7 +62,7 @@
            </div>
            <div class="modal-body">
              <form class="" action="add_stepPost.php" method="post">
-               <input type="hidden" name="advancement" value="1">
+               <input type="hidden" name="advancement" value="<?php echo $i?>">
                <input type="hidden" name="name" value="<?php echo $name_proj?>">
                <input type="hidden" name="ID_proj" value="<?php echo $ID_proj?>">
                <textarea class="form-control" name="step" rows="8" placeholder=""></textarea>

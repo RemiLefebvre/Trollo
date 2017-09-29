@@ -53,13 +53,25 @@ function get_projets($order,$user){
 function get_steps($ID_proj){
   global $bdd;
 
-  $detail_proj=$bdd->prepare('SELECT * FROM steps WHERE ID_proj=:ID_proj');
-  $detail_proj->execute(array(
-    'ID_proj'=>$ID_proj
-  ));
+  $detail_proj=$bdd->query('SELECT * FROM steps WHERE ID_proj='.$ID_proj);
 
   return $detail_proj;
 
+  // $detail_proj=$bdd->query('SELECT u.under_step, s.advancement ,s.step
+  //       FROM under_steps u
+  //      RIGHT JOIN steps s
+  //      ON u.ID_step=s.ID
+  //      WHERE s.ID_proj='.$ID_proj);
+  //
+
 }
 
+// GET under_STEPS
+function get_under_steps(){
+  global $bdd;
+
+  $under_steps=$bdd->query('SELECT * FROM under_steps ');
+
+  return $under_steps;
+}
  ?>
