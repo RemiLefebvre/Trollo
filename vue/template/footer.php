@@ -23,7 +23,7 @@
     });
 
     //
-
+    // ADD underStep
     var memo;
     function memoIdStep(id){
       memo=id;
@@ -35,13 +35,17 @@
       // $(this).parents(".optionUnderStep").siblings('').after();
     });
 
-    // <input type="hidden" name="ID_step" value="memo">
+    // SUPR STEP
+    function suppStep(ID_step){
+      var replace = "supr_step.php?name=<?php echo $_GET['name']?>&ID_proj=<?php echo $_GET['ID_proj']?>&ID_step=" + ID_step;
+      window.location.replace(replace);
+    }
 
-
-
-    // a ajouter a l action
-// $_GET['ID_proj']) AND isset($_GET['name']
-
+    // INCREMENT STEP
+    function increStep(ID_step){
+      var replace = "incre_step.php?name=<?php echo $_GET['name']?>&ID_proj=<?php echo $_GET['ID_proj']?>&ID_step=" + ID_step;
+      window.location.replace(replace);
+    }
 
 
 </script>

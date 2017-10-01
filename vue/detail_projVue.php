@@ -28,9 +28,9 @@
 
                <p class="stepName"><?php echo $step['step'] ?></p>
                <div class="optionUnderStep">
-                 <i value="<?php echo $step['ID']?>" onclick="memoIdStep('<?php echo $step['ID']?>')" class="addUnderStep fa fa-plus text-primary" aria-hidden="true"></i>
-                 <i class="fa fa-arrow-circle-o-right text-primary" aria-hidden="true"></i>
-                 <i class="fa fa-times-circle  text-danger" aria-hidden="true"></i>
+                 <i onclick="memoIdStep('<?php echo $step['ID']?>')" class="addUnderStep fa fa-plus text-primary" aria-hidden="true"></i>
+                 <i onclick="increStep('<?php echo $step['ID']?>')" class="fa fa-arrow-circle-o-right text-primary" aria-hidden="true"></i>
+                 <i onclick="suppStep('<?php echo $step['ID']?>')" class="fa fa-times-circle  text-danger" aria-hidden="true"></i>
                </div>
 
                <br>

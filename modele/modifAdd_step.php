@@ -1,7 +1,7 @@
 <?php
 require_once('dbconnect/dbconnect.php');
 
-
+// ADD STEP
 function add_step($advancement,$step,$ID_proj){
 
   global $bdd;
@@ -15,6 +15,9 @@ function add_step($advancement,$step,$ID_proj){
 
 }
 
+
+
+// ADD UNDER STEP
 function add_under_step($underStep,$ID_step){
 
   global $bdd;
@@ -28,5 +31,23 @@ function add_under_step($underStep,$ID_step){
 }
 
 
+// SUPR STEP
+function supr_step($ID_step){
+  global $bdd;
 
+  $sup_steps=$bdd->query('DELETE FROM under_steps WHERE ID_step ='.$ID_step);
+
+  $sup_steps=$bdd->query('DELETE FROM steps WHERE ID ='.$ID_step);
+}
+
+
+// INCREMENT STEP
+function incre_step($ID_step){
+  global $bdd;
+
+  $sup_steps=$bdd->prepare('UPDATE steps SET advancement = advancement+1 WHERE ID =:ID');
+  $sup_steps->execute(array(
+    'ID'=> $ID_step
+  ));
+}
  ?>
