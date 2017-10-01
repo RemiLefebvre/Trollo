@@ -1,7 +1,8 @@
 <?php
-require_once("../modele/data.php");
-session_start();
+require_once("service/session.php");
+verifConnection();
 
+require_once("../modele/data.php");
 if (isset($_GET['order'])) {
   $order=htmlspecialchars($_GET['order']);
 }

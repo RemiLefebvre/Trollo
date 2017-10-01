@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once("service/session.php");
+verifConnection();
 
 require_once("../modele/data.php");
 
