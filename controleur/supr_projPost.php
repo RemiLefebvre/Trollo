@@ -1,10 +1,10 @@
 <?php
   require_once("../modele/modifAdd_projet.php");
 
-  if (isset($_GET['name'])) {
+  if (isset($_GET['ID'])) {
     // if (preg_match('/^[O-9]+$/', $_GET['ID'])) {
-      $name=htmlspecialchars($_GET['name']);
-      supr_proj($name);
+      $ID=htmlspecialchars($_GET['ID']);
+      supr_proj($ID);
     // }
   }
 

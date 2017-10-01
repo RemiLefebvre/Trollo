@@ -1,14 +1,60 @@
 
+
+<script type="text/javascript">
+
+
+    $(".step").mouseenter(function(){
+      $(this).css("background-color","rgba(85, 173, 211,0.1)");
+    });
+    $(".step").mouseleave(function(){
+      $(this).css("background-color","rgba(250,250,250,0.4)");
+    });
+
+    $(".step").click(function(){
+      $(".optionUnderStep").css("display","none");
+      $(".underStep").slideUp("fast");
+      $(".step").css("border","0 solid black");
+      $('.step').css("box-shadow","none");
+      $(".step").css("min-height","auto");
+      $(this).css("box-shadow","0 0 1px 200px rgba(85, 173, 211,0.3) inset");
+      $(this).css("min-height","100px");
+      $(this).children(".optionUnderStep").css("display","flex");
+      $(this).children(".underStep").slideDown("fast");
+    });
+
+    //
+
+    var memo;
+    function memoIdStep(id){
+      memo=id;
+    }
+    $('.addUnderStep').click(function(){
+      var form='<div class="formUnderStep"><form class="d-flex" action="add_under_stepPost.php?name=<?php echo $_GET['name']?>&ID_proj=<?php echo $_GET['ID_proj']?>" method="post"><input type="hidden" name="ID_step" value="'+memo+'"><input type="text" name="under_step" placeholder="sous-étape" class="form-control"><input type="submit" value="ok" class="btn btn-success"></form></div>';
+      $('.formUnderStep').empty();
+      $(this).parents(".optionUnderStep").after(form);
+      // $(this).parents(".optionUnderStep").siblings('').after();
+    });
+
+    // <input type="hidden" name="ID_step" value="memo">
+
+
+
+    // a ajouter a l action
+// $_GET['ID_proj']) AND isset($_GET['name']
+
+
+
+</script>
 <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
 
 <script src="../js/plugins.js"></script>
 <script src="../js/main.js"></script>
 
 <!-- jQuery library -->
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->
 
 <!-- Tether -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script> -->
 
 <!-- Bootstrap 4 Alpha JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>

@@ -35,20 +35,32 @@ function add_proj($name,$description,$deadtime,$user){
 
 
 // SUPR PROJET
-function supr_proj($name){
+function supr_proj($ID){
   global $bdd;
 
-  $sup=$bdd->prepare('DELETE FROM projets
-  WHERE name = ?');
+  $sup=$bdd->prepare('DELETE FROM projets WHERE ID = ?');
   $sup->execute(array(
-    $name
+    $ID
   ));
 
+  $sup_steps=$bdd->query('SELECT ID FROM steps WHERE ID_proj ='.$ID);
 
-  $sup_steps=$bdd->prepare('DELETE FROM steps WHERE projet_name = ?');
+  $sup_steps=$sup_steps->fetchAll();
+  if (isset($sup_steps['ID'])) {
+    $ID_step_to_sup=$sup_steps['ID'];
+  }
+
+  $sup_steps=$bdd->prepare('DELETE FROM steps WHERE ID_proj ='.$ID);
   $sup_steps->execute(array(
-    $name
+    $ID
   ));
+
+  if ($ID_step_to_sup) {
+    $sup_under_steps=$bdd->prepare('DELETE FROM under_steps WHERE ID_step = ?');
+    $sup_under_steps->execute(array(
+      $ID_step_to_sup
+    ));
+  }
 
 }
  ?>

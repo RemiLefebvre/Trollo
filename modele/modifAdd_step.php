@@ -15,4 +15,18 @@ function add_step($advancement,$step,$ID_proj){
 
 }
 
+function add_under_step($underStep,$ID_step){
+
+  global $bdd;
+
+  $req=$bdd->prepare('INSERT INTO under_steps(ID_step,under_step) VALUES(:ID_step, :under_step)');
+  $req->execute(array(
+    'ID_step'=> $ID_step,
+    'under_step'=> $underStep
+  ));
+
+}
+
+
+
  ?>

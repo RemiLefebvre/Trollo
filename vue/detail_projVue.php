@@ -4,13 +4,6 @@
 
  <main id="mainSteps" class=" ">
    <h2 class="name_proj card"><?php echo $name_proj?></h2>
-   <div class="card">
-     <!-- <pre>
-     <?php print_r($under_steps);
- ?>
-    </pre> -->
-   </div>
-
    <div class="row px-5 justify-content-between">
 
      <?php
@@ -31,13 +24,20 @@
          foreach ($steps as $step) {
            if ($step['advancement']==$i) {
              ?>
-             <a href="#" class="card step">
-               <strong><p class=""><?php echo $step['step'] ?></p></strong>
+             <a href="#" class="card step" tabindex="-1">
+
+               <p class="stepName"><?php echo $step['step'] ?></p>
+               <div class="optionUnderStep">
+                 <i value="<?php echo $step['ID']?>" onclick="memoIdStep('<?php echo $step['ID']?>')" class="addUnderStep fa fa-plus text-primary" aria-hidden="true"></i>
+                 <i class="fa fa-arrow-circle-o-right text-primary" aria-hidden="true"></i>
+                 <i class="fa fa-times-circle  text-danger" aria-hidden="true"></i>
+               </div>
+
                <br>
                <?php foreach ($under_steps as $under_step) {
                  if($under_step['ID_step']==$step['ID']){
                    ?>
-                   <p>-<?php echo $under_step['under_step'] ?></p>
+                   <p class="underStep">- <?php echo $under_step['under_step'] ?></p>
                    <?php
                  }
                } ?>
