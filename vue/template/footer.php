@@ -48,6 +48,19 @@
     }
 
 
+    // CHECK UNDER_STEP
+    function check(ID_UnderStep,Udone){
+      if (Udone==0) {
+        var done = "&done=1";
+      }
+      else {
+        var done = "&done=0";
+      }
+      var replace = "check_under_step.php?name=<?php echo $_GET['name']?>&ID_proj=<?php echo $_GET['ID_proj']?>&ID_UnderStep=" + ID_UnderStep + done;
+      window.location.replace(replace);
+    }
+
+
 </script>
 <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
 

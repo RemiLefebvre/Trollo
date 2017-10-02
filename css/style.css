@@ -189,4 +189,8 @@ body{
 }
 #mainSteps section .steps .step .underStep{
   display: none;
+  cursor: pointer;
+}
+#mainSteps section .steps .step .underStep .check{
+  font-size: 18px;
 }

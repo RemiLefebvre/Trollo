@@ -29,7 +29,13 @@
                <p class="stepName"><?php echo $step['step'] ?></p>
                <div class="optionUnderStep">
                  <i onclick="memoIdStep('<?php echo $step['ID']?>')" class="addUnderStep fa fa-plus text-primary" aria-hidden="true"></i>
+                 <?php
+                  if ($step['advancement']!=3) {
+                    ?>
                  <i onclick="increStep('<?php echo $step['ID']?>')" class="fa fa-arrow-circle-o-right text-primary" aria-hidden="true"></i>
+                 <?php
+               }
+               ?>
                  <i onclick="suppStep('<?php echo $step['ID']?>')" class="fa fa-times-circle  text-danger" aria-hidden="true"></i>
                </div>
 
@@ -37,7 +43,13 @@
                <?php foreach ($under_steps as $under_step) {
                  if($under_step['ID_step']==$step['ID']){
                    ?>
-                   <p class="underStep">- <?php echo $under_step['under_step'] ?></p>
+
+
+                   <p onclick="check(<?php echo $under_step['ID'] ?>,<?php echo $under_step['done']?>)" class="underStep">
+                    <i <?php if($under_step['done']==1){
+                      echo "style='color:green'";
+                    }?> class="fa fa-check-circle-o check" aria-hidden="true"></i>
+- <?php echo $under_step['under_step'] ?></p>
                    <?php
                  }
                } ?>

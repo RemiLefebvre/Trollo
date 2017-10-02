@@ -50,4 +50,17 @@ function incre_step($ID_step){
     'ID'=> $ID_step
   ));
 }
+
+
+// CHECK UNDERSTEP
+function check_UnderStep($ID_UnderStep,$done){
+  global $bdd;
+
+  $check_UnderStep=$bdd->prepare('UPDATE under_steps SET done=:done WHERE ID=:ID');
+  $check_UnderStep->execute(array(
+    'ID'=> $ID_UnderStep,
+    'done'=> $done
+  ));
+};
+
  ?>
