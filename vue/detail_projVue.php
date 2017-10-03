@@ -45,7 +45,7 @@
                    ?>
 
 
-                   <p  class="underStep">
+                   <p  class="underStep mb-1">
                     <i <?php if($under_step['done']==1){
                       echo "style='color:green'";
                     }?> class="fa fa-check-circle-o check" aria-hidden="true"></i>
@@ -61,6 +61,7 @@
                  }
                } ?>
              </a>
+             <i class="fa fa-arrow-circle-o-up closeUnderSteps" aria-hidden="true"></i>
                <?php
              }
            }

@@ -27,12 +27,23 @@
       $(".step").css("min-height","auto");
       // $(".underStep").slideUp("fast");
 
+      $(this).next(".closeUnderSteps").css("display","block");
       $(this).css("box-shadow","0 0 1px 200px rgba(85, 173, 211,0.3) inset");
       $(this).css("min-height","100px");
       $(this).children(".optionUnderStep").css("display","flex");
       $(this).children(".underStep").slideDown("fast");
     });
 
+    // CLOSE UNDESTEP
+    $(".closeUnderSteps").click(function(){
+      $(".optionUnderStep").css("display","none");
+      $(".step").css("border","0 solid black");
+      $('.step').css("box-shadow","none");
+      $(".step").css("min-height","auto");
+
+      $(this).slideUp("fast");
+      $(this).prev(".step").children(".underStep").slideUp("fast");
+    });
 
 
     // ADD underStep

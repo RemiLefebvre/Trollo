@@ -206,3 +206,10 @@ body{
 #mainSteps section .steps .step .checkUnderStep{
   color: green;
 }
+
+.closeUnderSteps{
+  display: none;
+  font-size: 12px;
+  cursor: pointer;
+  color: grey;
+}
