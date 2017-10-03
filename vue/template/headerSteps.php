@@ -33,7 +33,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <h2><strong><a class="navbar-brand ml-1 navbar-brand text-black">Trollo</a></strong></h2>
+          <h1 class="navbar-brand ml-1 navbar-brand text-black"><strong>Trollo</strong></h1>
 
           <div class="collapse navbar-collapse " id="navbarText">
             <ul class="navbar-nav mr-auto">
