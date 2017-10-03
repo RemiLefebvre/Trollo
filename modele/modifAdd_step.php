@@ -22,10 +22,11 @@ function add_under_step($underStep,$ID_step){
 
   global $bdd;
 
-  $req=$bdd->prepare('INSERT INTO under_steps(ID_step,under_step) VALUES(:ID_step, :under_step)');
+  $req=$bdd->prepare('INSERT INTO under_steps(ID_step,under_step,done) VALUES(:ID_step, :under_step ,:done)');
   $req->execute(array(
     'ID_step'=> $ID_step,
-    'under_step'=> $underStep
+    'under_step'=> $underStep,
+    'done'=>0
   ));
 
 }
@@ -63,4 +64,14 @@ function check_UnderStep($ID_UnderStep,$done){
   ));
 };
 
+
+// SUPR UNDERSTEP
+function sup_UnderStep($ID_UnderStep){
+  global $bdd;
+
+  $sup_UnderStep=$bdd->prepare('DELETE FROM under_steps WHERE ID=:ID');
+  $sup_UnderStep->execute(array(
+    'ID'=> $ID_UnderStep
+  ));
+};
  ?>

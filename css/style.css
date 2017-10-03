@@ -187,10 +187,22 @@ body{
   font-size: 30px;
   color: #505dd8;
 }
-#mainSteps section .steps .step .underStep{
+#mainSteps section .steps .step .underStep .check{
+  font-size: 18px;
+}
+#mainSteps section .steps .step .underStep, .supCheck{
   display: none;
   cursor: pointer;
 }
-#mainSteps section .steps .step .underStep .check{
-  font-size: 18px;
+#mainSteps section .steps .step .supCheck{
+  font-size: 0;
+}
+#mainSteps section .steps .step .supUnderStep{
+  color: red;
+}
+#mainSteps section .steps .step .supUnderStep:hover , #mainSteps section .steps .step .checkUnderStep:hover{
+  text-decoration: underline;
+}
+#mainSteps section .steps .step .checkUnderStep{
+  color: green;
 }

@@ -45,11 +45,18 @@
                    ?>
 
 
-                   <p onclick="check(<?php echo $under_step['ID'] ?>,<?php echo $under_step['done']?>)" class="underStep">
+                   <p  class="underStep">
                     <i <?php if($under_step['done']==1){
                       echo "style='color:green'";
                     }?> class="fa fa-check-circle-o check" aria-hidden="true"></i>
-- <?php echo $under_step['under_step'] ?></p>
+- <?php echo $under_step['under_step'] ?>
+                  </p>
+
+                    <p  class="supCheck">
+                      <span class="supUnderStep" onclick="supUnderStep(<?php echo $under_step['ID'] ?>)">Suprimmer </span>
+                      <span class="checkUnderStep" onclick="check(<?php echo $under_step['ID'] ?>,<?php echo $under_step['done']?>)">Check!</span>
+                    </p>
+
                    <?php
                  }
                } ?>

@@ -10,19 +10,31 @@
       $(this).css("background-color","rgba(250,250,250,0.4)");
     });
 
+    // SHOW SUPR AND CHECK UNDERSTEP
+    $(".underStep").click(function(){
+      $(".supCheck").slideUp("fast");
+      $(".supCheck").css("font-size","0");
+      $(this).next().slideDown("fast");
+      $(this).next().animate({fontSize: '15px'},"fast");
+    });
+
+    //SHOW UNDERSTEP AND SELECT COLOR
     $(".step").click(function(){
+      $(".supCheck").css("font-size","0");
       $(".optionUnderStep").css("display","none");
-      $(".underStep").slideUp("fast");
       $(".step").css("border","0 solid black");
       $('.step').css("box-shadow","none");
       $(".step").css("min-height","auto");
+      // $(".underStep").slideUp("fast");
+
       $(this).css("box-shadow","0 0 1px 200px rgba(85, 173, 211,0.3) inset");
       $(this).css("min-height","100px");
       $(this).children(".optionUnderStep").css("display","flex");
       $(this).children(".underStep").slideDown("fast");
     });
 
-    //
+
+
     // ADD underStep
     var memo;
     function memoIdStep(id){
@@ -60,6 +72,13 @@
       window.location.replace(replace);
     }
 
+    // SUP UNDERSTEP
+    function supUnderStep(ID_UnderStep){
+      var replace = "sup_underStep.php?name=<?php echo $_GET['name']?>&ID_proj=<?php echo $_GET['ID_proj']?>&ID_UnderStep=" + ID_UnderStep;
+      window.location.replace(replace);
+    }
+
+
 
 </script>
 <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
@@ -71,7 +90,7 @@
 <!-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->
 
 <!-- Tether -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 
 <!-- Bootstrap 4 Alpha JS -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
